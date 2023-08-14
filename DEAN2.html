@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生物系課程查詢｜彰師通 NcueLink</title>
+    <link rel="icon" type="image/png" href="https://site.ncuelink.ncuesa.org/img/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- global CSS -->
+    <link href="https://webap0.ncue.edu.tw/DEANV2/Content/css?v=XfppdWtmmD7AeIaCE6p-x2n4FAZcWgrlNorqU0v0zeA1" rel="stylesheet" />
+    <link href="https://webap0.ncue.edu.tw/DEANV2/Content/MyCSS?v=nFOnxJfhFfZRyaoUgt5wEKsysbqEgmeh8K1agfBAXEk1" rel="stylesheet" />
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jquery?v=8z6YzzH0c3lAT2R_qe2hLO3ZyowcuHmPA5RUiWrC6gU1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jqueryui?v=nmuMA-O4C0zphhL2ApoyudBi4v4VCXr0cCFlFmBK2eU1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jqueryval?v=nsOwUc2j3GMqgidS30eLgZVJeHn83Wqmm2vMD4cUlKA1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jqueryAJAX?v=Xuam6TWPhcGt1QT7p5fexG3T-XZA9hjh88zJ89jkDQQ1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/bootstrap?v=5vOThjBkQoqkLx8SW1NhtXx26ihmsuvhztPSLreW7mU1"></script>
+    <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/MyJS?v=gCmj3yvji5vv5mrFHaWgd_aXi87obCt2nDGmJTD8vGk1"></script>
+    <link href="https://webap0.ncue.edu.tw/DEANV2/Content/DeanStyle.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #125299;
+        }
+
+        .navbar-brand {
+            color: azure;
+            font-size: x-large;
+        }
+
+        .panel-heading {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        .panel-body {
+            background-color: lightblue;
+        }
+
+        .btn-primary {
+            background-color: cornflowerblue;
+            border-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;z-index: 200;"><img src='https://custom-doodle.com/wp-content/uploads/doodle/pop-cat-meme/pop-cat-meme-doodle.gif' width="64" height="64" /><br>等一下ㄛ..</div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <b>彰師通 NcueLink</b>
+            <span style="color: aliceblue;"><font size="2"><i>專屬生物系的課程查詢系統</i></font></span>
+        </a>
+    </nav>
+
+    <div class="container mt-4">
+        <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post">-->
+        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="post">
+            <div class="card">
+                <div class="card-header">
+                    查詢條件
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="ddl_cls_branch">日夜間別：</label>
+                        <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
+                            <option value="D">日間部(教務處)</option>
+                            <option value="N">碩士在職專班(進修學院)</option>
+                        </select>
+                        <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="" />
+                        <!--
+                        <label for="ddl_cls_type">全英語授課：</label>
+                        <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
+                            <option value=""></option>
+                            <option value="Y">是</option>
+                            <option value="N">否</option>
+                        </select>
+                        <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
+
+                        <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
+                        <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
+                            <option value=""></option>
+                            <option value="Y">是</option>
+                            <option value="N">否</option>
+                        </select>
+                        <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
+                        學年度：
+                        <select data-val="true" data-val-number="欄位 sel_yms_year 必須是數字。" data-val-required="sel_yms_year 欄位是必要項。" id="ddl_yms_year" name="sel_yms_year" class="form-control">
+                            <option value="113">113</option>
+                            <option selected="selected" value="112">112</option>
+                            <option value="111">111</option>
+                            <option value="110">110</option>
+                            <option value="109">109</option>
+                            <option value="108">108</option>
+                            <option value="107">107</option>
+                            <option value="106">106</option>
+                            <option value="105">105</option>
+                            <option value="104">104</option>
+                            <option value="103">103</option>
+                            <option value="102">102</option>
+                            <option value="101">101</option>
+                            <option value="100">100</option>
+                            <option value="99">99</option>
+                        </select>
+                        <input id="sel_yms_year" name="sel_yms_year" type="hidden" value="112" />
+                        學期：
+                        <select data-val="true" data-val-number="欄位 sel_yms_smester 必須是數字。" data-val-required="sel_yms_smester 欄位是必要項。" id="ddl_yms_smester" name="sel_yms_smester" class="form-control">
+                            <option selected="selected" value="1">第一學期</option>
+                            <option value="2">第二學期</option>
+                            <option value="3">暑修班(教務處、進修學院)</option>
+                            <option value="4">暑期班(進修學院)</option>
+                        </select>
+                        <input id="sel_yms_smester" name="sel_yms_smester" type="hidden" value="1" />
+                        <!--
+                        課程代碼：
+                        <input id="scr_selcode" name="scr_selcode" class="form-control" type="text" value="" />
+                        -->
+                        修課班別：
+                        <select id="ddl_scj_cls_id" name="sel_cls_id" class="form-control"> <!--onchange="$(this.form).submit();"-->
+                            <option value=""></option>
+                            <option value="D201B100">科學大數據探索微學程</option>
+                            <option value="D201BN1A">理學院</option>
+                            <option value="D240BN1A">生一</option>
+                            <option value="D240BN2A">生二</option>
+                            <option value="D240BN3A">生三</option>
+                            <option value="D240BN4A">生四</option>
+                            <option value="D240MN1A">生碩一</option>
+                            <option value="D240MN1B">生技碩一</option>
+                            <option value="D240MN2A">生碩二</option>
+                            <option value="D240MN2B">生技碩二</option>
+                            <option value="D410BV1O">理院初級英文</option>
+                            <option value="D410BV1P">理院中級英文</option>
+                            <option value="D410BV1Q">理院高級英文</option>
+                            <option value="DM35BV00">軍訓課</option>
+                            <option value="DMA0BV00">教育學程</option>
+                            <option value="DMD0BV00">大二體育</option>
+                            <option value="DMD0BV0A">大三、四體育</option>
+                        </select>
+                        <input id="sel_cls_id" name="sel_cls_id" type="hidden" value="" />
+
+                    </div>
+                    <!-- Add your other form elements here -->
+                    <button type="submit" class="btn btn-primary">查詢</button>
+                    <a href="javascript:location.reload()" class="btn btn-default">清除</a>
+                </div>
+            </div>
+        </form>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                開課課程列表
+            </div>
+            <div class="card-body" id="result">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    $(function () {
+        $("#courseForm").submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: 'https://webap0.ncue.edu.tw/DEANV2/Other/ob010/GetJson_ddl_scj_cls_id',
+                type: 'GET',
+                dataType: 'json',
+                data: $(this).serialize(),
+                success: function (data) {
+                    var options = '';
+                    for (var i = 0; i < data.length; i++) {
+                        options += '<option value="' + data[i].Value + '">' + data[i].Text + '</option>';
+                    }
+                    $("#ddl_scj_cls_id").html(options);
+                },
+                error: function () {
+                    // Handle AJAX error here
+                }
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>
