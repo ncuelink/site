@@ -35,8 +35,9 @@
                         
         .newcontainer {
             width: auto;
-            margin-left:5%;
-            margin-right: 5%;
+            margin-left: 4%;
+            margin-right: 4%;
+            margin-top: 10px;
         }
 
         .card {
@@ -78,148 +79,171 @@
     </nav>
 
     <div class="newcontainer">
-        <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post">-->
-        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="post">
+        <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post"> id=form0-->
+        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="courseForm" method="post">
             <div class="card">
                 <div class="card-header">
                     查詢條件
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                    <table>
-                        <tr>
-                        <td>
-                        <label for="ddl_cls_type">📆學年度：</label>
-                        <select data-val="true" data-val-number="欄位 sel_yms_year 必須是數字。" data-val-required="sel_yms_year 欄位是必要項。" id="ddl_yms_year" name="sel_yms_year" class="form-control">
-                            <option value="113">113</option>
-                            <option selected="selected" value="112">112</option>
-                            <option value="111">111</option>
-                            <option value="110">110</option>
-                            <option value="109">109</option>
-                            <option value="108">108</option>
-                            <option value="107">107</option>
-                            <option value="106">106</option>
-                            <option value="105">105</option>
-                            <option value="104">104</option>
-                            <option value="103">103</option>
-                            <option value="102">102</option>
-                            <option value="101">101</option>
-                            <option value="100">100</option>
-                            <option value="99">99</option>
-                        </select>
-                        <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />
-                        <input id="sel_yms_year" name="sel_yms_year" type="hidden" value="112" />
-                        </td>
-                        <td>&emsp;&emsp;</td>
-                        <td>
-                        <label for="ddl_cls_type">🔎課程代碼：</label>
-                        <input id="scr_selcode" name="scr_selcode" class="form-control" type="text" placeholder="(～o￣3￣)～" value="" />
-                        </td>
-                        </tr>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="ddl_cls_type">📆學年度：</label>
+                                    <select data-val="true" data-val-number="欄位 sel_yms_year 必須是數字。" data-val-required="sel_yms_year 欄位是必要項。" id="ddl_yms_year" name="sel_yms_year" class="form-control">
+                                        <option value="113">113</option>
+                                        <option selected="selected" value="112">112</option>
+                                        <option value="111">111</option>
+                                        <option value="110">110</option>
+                                        <option value="109">109</option>
+                                        <option value="108">108</option>
+                                        <option value="107">107</option>
+                                        <option value="106">106</option>
+                                        <option value="105">105</option>
+                                        <option value="104">104</option>
+                                        <option value="103">103</option>
+                                        <option value="102">102</option>
+                                        <option value="101">101</option>
+                                        <option value="100">100</option>
+                                        <option value="99">99</option>
+                                    </select>
+                                    <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />
+                                    <input id="sel_yms_year" name="sel_yms_year" type="hidden" value="112" />
+                                </td>
+                                <td>&emsp;&emsp;</td>
+                                <td>
+                                    <label for="ddl_cls_type">🔎課程代碼：</label>
+                                    <input id="scr_selcode" name="scr_selcode" class="form-control" type="text" placeholder="(～o￣3￣)～" value="" />
+                                </td>
+                            </tr>
 
-                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 
-                        <tr>
-                        <td>
-                        <label for="ddl_cls_type">🏫學期：</label>
-                        <select data-val="true" data-val-number="欄位 sel_yms_smester 必須是數字。" data-val-required="sel_yms_smester 欄位是必要項。" id="ddl_yms_smester" name="sel_yms_smester" class="form-control">
-                            <option selected="selected" value="1">第一學期</option>
-                            <option value="2">第二學期</option>
-                            <option value="3">暑修班(教務處、進修學院)</option>
-                            <option value="4">暑期班(進修學院)</option>
-                        </select>
-                        <input id="sel_yms_smester" name="sel_yms_smester" type="hidden" value="1" />
-                        </td>                
-                        <td>&emsp;&emsp;</td>                        
-                        <td>
-                        <label for="ddl_cls_type">🔎課程名稱：</label>
-                        <input id="sub_name" name="sub_name" class="form-control" type="text" placeholder="~(￣▽￣)~*" value="" />
-                        </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <label for="ddl_cls_type">🏫學期：</label>
+                                    <select data-val="true" data-val-number="欄位 sel_yms_smester 必須是數字。" data-val-required="sel_yms_smester 欄位是必要項。" id="ddl_yms_smester" name="sel_yms_smester" class="form-control">
+                                        <option selected="selected" value="1">第一學期</option>
+                                        <option value="2">第二學期</option>
+                                        <option value="3">暑修班(教務處、進修學院)</option>
+                                        <option value="4">暑期班(進修學院)</option>
+                                    </select>
+                                    <input id="sel_yms_smester" name="sel_yms_smester" type="hidden" value="1" />
+                                </td>
+                                <td>&emsp;&emsp;</td>
+                                <td>
+                                    <label for="ddl_cls_type">🔎課程名稱：</label>
+                                    <input id="sub_name" name="sub_name" class="form-control" type="text" placeholder="~(￣▽￣)~*" value="" />
+                                </td>
+                            </tr>
 
-                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 
-                        <tr>
-                        <td>
-                        <label for="ddl_cls_type">📚修課班別：</label>
-                        <select id="ddl_scj_cls_id" name="sel_cls_id" class="form-control">
-                            <!--onchange="$(this.form).submit();"-->
-                            <option value=""></option>
-                            <option value="D240BN1A">生一</option>
-                            <option value="D240BN2A">生二</option>
-                            <option value="D240BN3A">生三</option>
-                            <option value="D240BN4A">生四</option>
+                            <tr>
+                                <td>
+                                    <label for="ddl_cls_type">📚修課班別：</label>
+                                    <select id="ddl_scj_cls_id" name="sel_cls_id" class="form-control">
+                                        <!--onchange="$(this.form).submit();"-->
+                                        <option value=""></option>
+                                        <option value="D240BN1A">生一</option>
+                                        <option value="D240BN2A">生二</option>
+                                        <option value="D240BN3A">生三</option>
+                                        <option value="D240BN4A">生四</option>
 
-                            <option value="D201BN1A">理學院</option>
-                            <option value="D201B100">科學大數據探索微學程</option>
+                                        <option value="D201BN1A">理學院</option>
+                                        <option value="D201B100">科學大數據探索微學程</option>
 
-                            <option value="DMA0BV00">教育學程</option>
-                            <option value="D720BV0A">核心通識</option>
-                            <option value="DM35BV00">軍訓課</option>
+                                        <option value="DMA0BV00">教育學程</option>
+                                        <option value="D720BV0A">核心通識</option>
+                                        <option value="DM35BV00">軍訓課</option>
 
-                            <option value="DMD0BV00">大二體育</option>
-                            <option value="DMD0BV0A">大三、四體育</option>
+                                        <option value="DMD0BV00">大二體育</option>
+                                        <option value="DMD0BV0A">大三、四體育</option>
 
-                            <option value="D410BV1O">理院初級英文</option>
-                            <option value="D410BV1P">理院中級英文</option>
-                            <option value="D410BV1Q">理院高級英文</option>
+                                        <option value="D410BV1O">理院初級英文</option>
+                                        <option value="D410BV1P">理院中級英文</option>
+                                        <option value="D410BV1Q">理院高級英文</option>
 
-                            <option value="D240MN1A">生碩一</option>
-                            <option value="D240MN2A">生碩二</option>
-                            <option value="D240MN1B">生技碩一</option>
-                            <option value="D240MN2B">生技碩二</option>
-                        </select>
-                        <input id="sel_cls_id" name="sel_cls_id" type="hidden" value="" />
-                        </td>
-                        <td>&emsp;&emsp;</td> 
-                        <td>
-                        <label for="ddl_cls_type">🔎老師姓名：</label>
-                        <input id="emp_name" name="emp_name" class="form-control" type="text" placeholder="(￣y▽,￣)╭ " value="" />
-                        </td>
-                        </tr>
+                                        <option value="D240MN1A">生碩一</option>
+                                        <option value="D240MN2A">生碩二</option>
+                                        <option value="D240MN1B">生技碩一</option>
+                                        <option value="D240MN2B">生技碩二</option>
+                                    </select>
+                                    <input id="sel_cls_id" name="sel_cls_id" type="hidden" value="" />
+                                </td>
+                                <td>&emsp;&emsp;</td>
+                                <td>
+                                    <label for="ddl_cls_type">🔎老師姓名：</label>
+                                    <input id="emp_name" name="emp_name" class="form-control" type="text" placeholder="(￣y▽,￣)╭ " value="" />
+                                </td>
+                            </tr>
 
-                        <!--<label for="ddl_cls_branch">日夜間別：</label>
-                        <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
-                            <option value="D">日間部(教務處)</option>
-                            <option value="N">碩士在職專班(進修學院)</option>
-                        </select>
-                        <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />-->
-                        <!--
-                        <label for="ddl_cls_type">全英語授課：</label>
-                        <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
-                            <option value=""></option>
-                            <option value="Y">是</option>
-                            <option value="N">否</option>
-                        </select>
-                        <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
+                            <!--<label for="ddl_cls_branch">日夜間別：</label>
+                            <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
+                                <option value="D">日間部(教務處)</option>
+                                <option value="N">碩士在職專班(進修學院)</option>
+                            </select>
+                            <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />-->
+                            <!--
+                            <label for="ddl_cls_type">全英語授課：</label>
+                            <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
+                                <option value=""></option>
+                                <option value="Y">是</option>
+                                <option value="N">否</option>
+                            </select>
+                            <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
 
-                        <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
-                        <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
-                            <option value=""></option>
-                            <option value="Y">是</option>
-                            <option value="N">否</option>
-                        </select>
-                        <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
-                        
-                    </table>
+                            <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
+                            <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
+                                <option value=""></option>
+                                <option value="Y">是</option>
+                                <option value="N">否</option>
+                            </select>
+                            <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
+
+                        </table>
                     </div>
                     <!-- Add your other form elements here -->
-                    <button type="submit" class="btn btn-primary">查詢</button>
-                    <a href="javascript:location.reload()" class="btn btn-default">清除</a>
+                    <button type="submit" class="btn btn-primary">&ensp;查詢&ensp;</button>
+                    <a href="javascript:location.reload()" class="btn btn-default">&ensp;清除&ensp;</a>&emsp;
+                    <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
+                    <a href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">選課資訊</a>&ensp;
+                    <a href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">校園地圖</a>&ensp;
+                    <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>
                 </div>
             </div>
         </form>
 
         <div class="card mt-4">
             <div class="card-header">
-                開課課程列表
+                開課課程列表<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>
             </div>
             <div class="card-body" id="result">
                 <!-- Results will be displayed here -->
             </div>
         </div>
     </div>
+    <script>
+    // 監聽 select 元素的 onchange 事件
+    document.getElementById('ddl_scj_cls_id').addEventListener('change', function() {
+        const form = document.getElementById('courseForm');
+        const formData = new FormData(form);
 
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // 將 AJAX 回應（data）插入到結果區域中
+            document.getElementById('result').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
