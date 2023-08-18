@@ -32,22 +32,22 @@
             color: azure;
             font-size: x-large;
         }
+
+        .navword {
+            
+            font-size:medium;
+            color: white;
+        }
                         
         .newcontainer {
             width: auto;
             margin-left: 4%;
             margin-right: 4%;
             margin-top: 10px;
-        }
+        }/*修復手機版面切到問題*/
 
-        .card {
-            
-            /*margin-left: 10%;
-            margin-left: 10%;
-            margin-bottom: 20px;*/
-            /*width: device;*/
-            /*margin-right: 10%;      
-            width: 80%;*/
+        .card-header {
+            font-size: medium;
         }
 
         .panel-heading {
@@ -60,22 +60,84 @@
         }
 
         .btn-primary {
-            background-color: cornflowerblue;
-            border-color: cornflowerblue;
+            background-color: #125299;
+            border-color: darkblue;
+        }
+        .btn-primary:hover {
+            background-color: dodgerblue;
+            transition: 0.7s;
         }
 
-        .card-header {
-            font-size: medium;
+        .btn-outline-primary {
+            border-color: #125299;
+            color: #125299;
         }
+        .btn-outline-primary:hover {
+            background-color: dodgerblue;
+            color:white;
+            transition: 0.7s;
+        }
+
+        .waiting {
+            display: none;
+            width: auto; /*69px*/
+            height: 89px;
+            border: 1px solid silver;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 2px;
+            z-index: 200;
+            justify-content: center; /*水平置中*/
+            align-items: center; /*垂直置中*/
+        }
+        
     </style>
 </head>
+
 <body>
-    <div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;z-index: 200;"><img src='https://custom-doodle.com/wp-content/uploads/doodle/pop-cat-meme/pop-cat-meme-doodle.gif' width="64" height="64" /><br>等一下ㄛ..</div>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div id="wait" class="waiting"><img src='https://custom-doodle.com/wp-content/uploads/doodle/pop-cat-meme/pop-cat-meme-doodle.gif' width="64" height="64" /><br><text align="center">&ensp;等一下ㄛ...</text></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top flex-nowrap">
         <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org">
+            <!--<img src="https://site.ncuelink.ncuesa.org/img/icon.png" alt="Logo" width="27" height="27" class="d-inline-block align-text-top">-->
             <b>彰師通 NcueLink</b>
-            <span style="color: aliceblue;"><font size="2"><i>專屬生物系的課程查詢系統</i></font></span>
+            <span style="color: aliceblue;"><font size="2"><i>生物系ㄉ課程查詢系統</i></font></span><!-- class="hidden-xs"-->
         </a>
+
+        <!--boostrap navbar-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mr-4" id="navbarNav">
+            <ul class="navbar-nav navbar-right">
+
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">&ensp;選課資訊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://ncuehulolo.idv.tw/search" target="_blank">&ensp;課程評價</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_blank">&ensp;開課查詢</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">&ensp;校園地圖</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/classroom.html" target="_blank">&ensp;教室代碼</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">&ensp;節次時間</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navword" href="https://taiwangov.com/KhJFy" target="_blank"><font color="white">&ensp;Go選課＞</font></a>
+                </li>
+                <!-- 在這裡加入更多的 nav 項目 -->
+            </ul>
+        </div>
     </nav>
 
     <div class="newcontainer">
@@ -92,21 +154,7 @@
                                 <td>
                                     <label for="ddl_cls_type">📆學年度：</label>
                                     <select data-val="true" data-val-number="欄位 sel_yms_year 必須是數字。" data-val-required="sel_yms_year 欄位是必要項。" id="ddl_yms_year" name="sel_yms_year" class="form-control">
-                                        <option value="113">113</option>
-                                        <option selected="selected" value="112">112</option>
-                                        <option value="111">111</option>
-                                        <option value="110">110</option>
-                                        <option value="109">109</option>
-                                        <option value="108">108</option>
-                                        <option value="107">107</option>
-                                        <option value="106">106</option>
-                                        <option value="105">105</option>
-                                        <option value="104">104</option>
-                                        <option value="103">103</option>
-                                        <option value="102">102</option>
-                                        <option value="101">101</option>
-                                        <option value="100">100</option>
-                                        <option value="99">99</option>
+                                        <!-- JavaScript 會動態生成這些選項 -->
                                     </select>
                                     <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />
                                     <input id="sel_yms_year" name="sel_yms_year" type="hidden" value="112" />
@@ -206,24 +254,44 @@
                     </div>
                     <!-- Add your other form elements here -->
                     <button type="submit" class="btn btn-primary">&ensp;查詢&ensp;</button>
-                    <a href="javascript:location.reload()" class="btn btn-default">&ensp;清除&ensp;</a>&emsp;
+                    <a href="javascript:location.reload()" class="btn btn-outline-primary">&ensp;清除&ensp;</a>
+                    <!--emsp;
                     <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
                     <a href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">選課資訊</a>&ensp;
                     <a href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">校園地圖</a>&ensp;
-                    <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>
+                    <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>-->
                 </div>
             </div>
         </form>
 
         <div class="card mt-4">
             <div class="card-header">
-                開課課程列表<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>
+                課程列表<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>
             </div>
             <div class="card-body" id="result">
                 <!-- Results will be displayed here -->
             </div>
         </div>
     </div>
+
+    <script>
+    const ddlYmsYear = document.getElementById('ddl_yms_year');
+    const currentYear = new Date().getFullYear(); // 取得當前西元年份
+
+    // 動態生成選項
+    for (let i = 0; i < 8; i++) {
+        const optionValue = (currentYear - 1911 - i).toString(); // 計算中華民國年
+        const optionText = optionValue;
+        const option = new Option(optionText, optionValue);
+
+        if (i === 0) {
+            option.setAttribute('selected', true); // 讓今年的選項預設為 selected
+        }
+
+        ddlYmsYear.appendChild(option);
+    }
+    </script>
+
     <script>
     // 監聽 select 元素的 onchange 事件
     document.getElementById('ddl_scj_cls_id').addEventListener('change', function() {
@@ -264,6 +332,7 @@
                     $("#ddl_scj_cls_id").html(options);
                 },
                 error: function () {
+                    console.error('Error:', error);
                     // Handle AJAX error here
                 }
             });
