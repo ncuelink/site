@@ -26,6 +26,7 @@
 
         .navbar {
             background-color: #125299;
+            justify-content: space-between;
         }
 
         .navbar-brand {
@@ -93,9 +94,51 @@
             align-items: center; /*垂直置中*/
         }
 
-        .navbar-toggler {
-            position: absolute;
+        /*.navbar-toggler {
+            position: fixed;
             right: 2%;
+            top: 20px;
+        }*/
+
+        @media (max-width: 767.98px) {
+            .subtitle {
+                font-size: x-large;
+                font-weight: 500;
+            }
+        }
+
+        @media (min-width: 768px){
+            .subtitle {
+                font-size: small;
+            }
+        }
+
+        @media (max-width: 991px) {/*解決平板navbar問題*/
+            .navbar-collapse {
+                border-top: 1px solid transparent;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+            }
+                .navbar-collapse.collapse {
+                    display: none !important;
+                }
+            .navbar-nav > li {
+                float: none;
+            }
+                .navbar-nav > li > a {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            .navbar-text {
+                float: none;
+                margin: 15px 0;
+            }
+            /* since 3.1.0 */
+            .navbar-collapse.collapse.in {
+                display: block !important;
+            }
+            .collapsing {
+                overflow: hidden !important;
+            }
         }
         
     </style>
@@ -104,46 +147,48 @@
 <body>
     <div id="wait" class="waiting"><img src='https://custom-doodle.com/wp-content/uploads/doodle/pop-cat-meme/pop-cat-meme-doodle.gif' width="64" height="64" /><br><text align="center">&ensp;等一下ㄛ...</text></div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org">
-            <!--<img src="https://site.ncuelink.ncuesa.org/img/icon.png" alt="Logo" width="27" height="27" class="d-inline-block align-text-top">-->
-            <b>彰師通 NcueLink</b>
-            <span style="color: aliceblue;"><font size="2"><i>生物系ㄉ課程查詢系統</i></font></span><!-- class="hidden-xs"-->
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark top-fixed">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org">
+                <img src="https://site.ncuelink.ncuesa.org/img/icon.png" alt="Logo" width="27" height="27" class="d-inline-block" style="vertical-align: text-bottom;">
+                <span class="hidden-xs"><b>彰師通 NcueLink</b></span>
+                <span class="subtitle" style="color: aliceblue;"><i>生物系課程查詢</i></span><!-- class="hidden-xs"-->
+            </a>
 
-        <!--boostrap navbar-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!--boostrap navbar-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse mr-4" id="navbarNav">
-            <ul class="navbar-nav navbar-right">
+            <div class="collapse navbar-collapse mr-4" id="navbarNav">
+                <ul class="navbar-nav navbar-right">
 
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">&ensp;選課資訊</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://ncuehulolo.idv.tw/search" target="_blank">&ensp;課程評價</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_blank">&ensp;開課查詢</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">&ensp;校園地圖</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/classroom.html" target="_blank">&ensp;教室代碼</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">&ensp;節次時間</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navword" href="https://taiwangov.com/KhJFy" target="_blank"><font color="white">&ensp;Go選課＞</font></a>
-                </li>
-                <!-- 在這裡加入更多的 nav 項目 -->
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">&ensp;選課資訊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://ncuehulolo.idv.tw/search" target="_blank">&ensp;課程評價</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_blank">&ensp;開課查詢</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">&ensp;校園地圖</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/classroom.html" target="_blank">&ensp;教室代碼</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">&ensp;節次時間</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navword" href="https://taiwangov.com/KhJFy" target="_blank"><font color="white">&ensp;Go選課＞</font></a>
+                    </li>
+                    <!-- 在這裡加入更多的 nav 項目 -->
+                </ul>
+            </div>
         </div>
-    </nav>
+</nav>
 
     <div class="newcontainer">
         <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post"> id=form0-->
