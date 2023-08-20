@@ -26,12 +26,16 @@
 
         .navbar {
             background-color: #125299;
-            justify-content: space-between;
         }
 
         .navbar-brand {
             color: azure;
             font-size: x-large;
+        }
+
+        .navbar-brand:hover {
+            font-size: xx-large;
+            transition: 0.5s;
         }
 
         .navword {
@@ -66,7 +70,7 @@
         }
         .btn-primary:hover {
             background-color: dodgerblue;
-            transition: 0.7s;
+            transition: 0.3s;
         }
 
         .btn-outline-primary {
@@ -88,6 +92,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            transform: translate(-50%, -50%); /* 設定置中 */
             padding: 2px;
             z-index: 200;
             justify-content: center; /*水平置中*/
@@ -147,10 +152,10 @@
 <body>
     <div id="wait" class="waiting"><img src='https://custom-doodle.com/wp-content/uploads/doodle/pop-cat-meme/pop-cat-meme-doodle.gif' width="64" height="64" /><br><text align="center">&ensp;等一下ㄛ...</text></div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark top-fixed">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org">
-                <img src="https://site.ncuelink.ncuesa.org/img/icon.png" alt="Logo" width="27" height="27" class="d-inline-block" style="vertical-align: text-bottom;">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid" style="justify-content: space-between;">
+            <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org" alt="彰師通網站">
+                <img src="img/favicon.ico" alt="favicon.ico" width="27" height="27" class="d-inline-block align-text-bottom"><!--style="vertical-align: text-bottom;"-->
                 <span class="hidden-xs"><b>彰師通 NcueLink</b></span>
                 <span class="subtitle" style="color: aliceblue;"><i>生物系課程查詢</i></span><!-- class="hidden-xs"-->
             </a>
@@ -160,8 +165,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse mr-4" id="navbarNav">
-                <ul class="navbar-nav navbar-right">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-right mr-auto">
 
                     <li class="nav-item">
                         <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">&ensp;選課資訊</a>
@@ -188,7 +193,7 @@
                 </ul>
             </div>
         </div>
-</nav>
+    </nav>
 
     <div class="newcontainer">
         <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post"> id=form0-->
@@ -303,7 +308,7 @@
                         </table>
                     </div>
                     <!-- Add your other form elements here -->
-                    <button type="submit" class="btn btn-primary">&ensp;查詢&ensp;</button>
+                    <button type="submit" class="btn btn-primary" id="btnSubmit">&ensp;查詢&ensp;</button>
                     <a href="javascript:location.reload()" class="btn btn-outline-primary">&ensp;清除&ensp;</a>
                     <!--emsp;
                     <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
@@ -316,7 +321,7 @@
 
         <div class="card mt-4">
             <div class="card-header">
-                課程列表<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>
+                課程列表<!--<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>--><!--已修正-->
             </div>
             <div class="card-body" id="result">
                 <!-- Results will be displayed here -->
@@ -324,7 +329,12 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
+ // 顯示近8年份
     const ddlYmsYear = document.getElementById('ddl_yms_year');
     const currentYear = new Date().getFullYear(); // 取得當前西元年份
 
@@ -342,7 +352,57 @@
     }
     </script>
 
-    <script>
+    <script>/*修正教學大綱無法開啟問題*/
+    function modifyLinks() {
+        var linksToModify = document.querySelectorAll("a[href*='/DEANV2/UploadDEAN/SUBJECT/'][target='_blank']");
+        linksToModify.forEach(function(linkElement) {
+            var originalHref = linkElement.getAttribute("href");
+            var newHref = "https://webap0.ncue.edu.tw" + originalHref;
+            linkElement.setAttribute("href", newHref);
+        });
+    }
+
+    function fetchFormDataAndModifyLinks() {
+        const form = document.getElementById('courseForm');
+        const formData = new FormData(form);
+
+        // 顯示等待訊息
+        document.getElementById('wait').style.display = 'flex';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // 將 AJAX 回應（data）插入到結果區域中
+            document.getElementById('result').innerHTML = data;
+            modifyLinks(); // 修改連結
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // 隱藏等待訊息
+            document.getElementById('wait').style.display = 'none';
+        });
+    }
+
+    // 在查詢按鈕被按下時執行 fetch 資料和修改連結的程式碼
+    document.getElementById('btnSubmit').addEventListener('click', function(event) {
+        event.preventDefault(); // 防止表單直接送出
+        fetchFormDataAndModifyLinks(); // 呼叫 fetch 資料和修改連結的函式
+    });
+
+    // 監聽 select 元素的 onchange 事件，並執行 fetch 資料和修改連結的程式碼
+    document.getElementById('ddl_scj_cls_id').addEventListener('change', fetchFormDataAndModifyLinks);
+    </script>
+
+
+
+
+
+    <!--<script>
     // 監聽 select 元素的 onchange 事件
     document.getElementById('ddl_scj_cls_id').addEventListener('change', function() {
         const form = document.getElementById('courseForm');
@@ -356,16 +416,20 @@
         .then(data => {
             // 將 AJAX 回應（data）插入到結果區域中
             document.getElementById('result').innerHTML = data;
+            // 在這裡修改特定連結的網址
+            var linksToModify = document.querySelectorAll("a[href*='/DEANV2/UploadDEAN/SUBJECT/'][target='_blank']");
+            linksToModify.forEach(function (linkElement) {
+                var originalHref = linkElement.getAttribute("href");
+                var newHref = "https://webap0.ncue.edu.tw" + originalHref;
+                linkElement.setAttribute("href", newHref);
+            });
         })
         .catch(error => {
             console.error('Error:', error);
         });
     });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+    </script>-->
+    <!--<script>
     $(function () {
         $("#courseForm").submit(function (event) {
             event.preventDefault();
@@ -388,7 +452,7 @@
             });
         });
     });
-    </script>
+    </script>-->
 
 </body>
 </html>
