@@ -70,7 +70,7 @@
         }
         .btn-primary:hover {
             background-color: dodgerblue;
-            transition: 0.3s;
+            transition: 0.4s;
         }
 
         .btn-outline-primary {
@@ -105,14 +105,14 @@
             top: 20px;
         }*/
 
-        @media (max-width: 767.98px) {
+        @media (max-width: 767.98px) {/*手機尺寸*/
             .subtitle {
-                font-size: x-large;
+                font-size: large;
                 font-weight: 500;
             }
         }
 
-        @media (min-width: 768px){
+        @media (min-width: 768px){/*平板以上尺寸*/
             .subtitle {
                 font-size: small;
             }
@@ -157,7 +157,7 @@
             <a class="navbar-brand" href="https://www.ncuelink.ncuesa.org" alt="彰師通網站">
                 <img src="img/favicon.ico" alt="favicon.ico" width="27" height="27" class="d-inline-block align-text-bottom"><!--style="vertical-align: text-bottom;"-->
                 <span class="hidden-xs"><b>彰師通 NcueLink</b></span>
-                <span class="subtitle" style="color: aliceblue;"><i>生物系課程查詢</i></span><!-- class="hidden-xs"-->
+                <span class="subtitle" style="color: aliceblue;"><i>生物系課程查詢🧬</i></span><!-- class="hidden-xs"-->
             </a>
 
             <!--boostrap navbar-->
@@ -229,8 +229,7 @@
                                     <select data-val="true" data-val-number="欄位 sel_yms_smester 必須是數字。" data-val-required="sel_yms_smester 欄位是必要項。" id="ddl_yms_smester" name="sel_yms_smester" class="form-control">
                                         <option selected="selected" value="1">第一學期</option>
                                         <option value="2">第二學期</option>
-                                        <option value="3">暑修班(教務處、進修學院)</option>
-                                        <option value="4">暑期班(進修學院)</option>
+                                        <option value="3">暑修班</option>
                                     </select>
                                     <input id="sel_yms_smester" name="sel_yms_smester" type="hidden" value="1" />
                                 </td>
@@ -333,10 +332,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
- // 顯示近8年份
+    <script> // 顯示近8年份、自動選擇年份與學期
     const ddlYmsYear = document.getElementById('ddl_yms_year');
+    const ddlYmsSmester = document.getElementById('ddl_yms_smester');
+
     const currentYear = new Date().getFullYear(); // 取得當前西元年份
+    const currentMonth = new Date().getMonth() + 1; // 取得當前月份
 
     // 動態生成選項
     for (let i = 0; i < 8; i++) {
@@ -349,6 +350,15 @@
         }
 
         ddlYmsYear.appendChild(option);
+    }
+
+    // 根據月份設定中華民國年和學期（1~5月查詢下學期、6~12查詢上學期）
+    if (currentMonth >= 1 && currentMonth <= 5) {
+        ddlYmsYear.value = (currentYear - 1911 - 1).toString(); // 今年減一為民國年
+        ddlYmsSmester.value = '2';
+    } else {
+        ddlYmsYear.value = (currentYear - 1911).toString(); // 今年為民國年
+        ddlYmsSmester.value = '1';
     }
     </script>
 
