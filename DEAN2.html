@@ -26,6 +26,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
@@ -175,9 +177,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navbar-right mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link navword" href="http://120.107.166.3/curriculum/super_pages.php?ID=curriculum1" target="_blank">&ensp;生物系課綱</a>
+                        <a class="nav-link navword" href="https://rainbowdigital.com.tw/ncue_biology/front/Course%20Information/under/archive.php?ID=bmN1ZV9iaW9sb2d5JnVuZGVy" target="_blank">&ensp;生物系課綱</a><!--http://120.107.166.3/curriculum/super_pages.php?ID=curriculum1-->
                     <li class="nav-item">
-                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">&ensp;選課資訊</a>
+                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/var/file/2/1002/img/958/course.html" target="_blank">&ensp;選課資訊</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navword" href="https://ncuehulolo.idv.tw/search" target="_blank">&ensp;課程評價</a>
@@ -189,10 +191,10 @@
                         <a class="nav-link navword" href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">&ensp;校園地圖</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/classroom.html" target="_blank">&ensp;教室代碼</a>
+                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/var/file/2/1002/img/1011/114294831.html" target="_blank">&ensp;教室代碼</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navword" href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">&ensp;節次時間</a>
+                        <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/var/file/2/1002/img/1011/712520307.html" target="_blank">&ensp;節次時間</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navword" href="https://taiwangov.com/KhJFy" target="_blank"><font color="white">&ensp;Go選課＞</font></a>
@@ -208,7 +210,7 @@
         <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="courseForm" method="post">
             <div class="card">
                 <div class="card-header">
-                    🧫查詢條件
+                    🧫 查詢條件
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -287,51 +289,63 @@
                             </tr>
 
                             <!--<label for="ddl_cls_branch">日夜間別：</label>
-                            <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
-                                <option value="D">日間部(教務處)</option>
-                                <option value="N">碩士在職專班(進修學院)</option>
-                            </select>
-                            <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />-->
+                        <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
+                            <option value="D">日間部(教務處)</option>
+                            <option value="N">碩士在職專班(進修學院)</option>
+                        </select>
+                        <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />-->
                             <!--
-                            <label for="ddl_cls_type">全英語授課：</label>
-                            <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
-                                <option value=""></option>
-                                <option value="Y">是</option>
-                                <option value="N">否</option>
-                            </select>
-                            <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
+                        <label for="ddl_cls_type">全英語授課：</label>
+                        <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
+                            <option value=""></option>
+                            <option value="Y">是</option>
+                            <option value="N">否</option>
+                        </select>
+                        <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
 
-                            <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
-                            <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
-                                <option value=""></option>
-                                <option value="Y">是</option>
-                                <option value="N">否</option>
-                            </select>
-                            <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
+                        <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
+                        <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
+                            <option value=""></option>
+                            <option value="Y">是</option>
+                            <option value="N">否</option>
+                        </select>
+                        <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
 
                         </table>
                     </div>
                     <!-- Add your other form elements here -->
                     <button type="submit" class="btn btn-primary" id="btnSubmit">&ensp;查詢&ensp;</button>
                     <a href="javascript:location.reload()" class="btn btn-outline-primary">&ensp;清除&ensp;</a>&emsp;
-                    <a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_self" style="font-size:xx-small;"><i>其他系所 請右轉＞</i></a>
+                    <!--<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_self" style="font-size:small;"><i>其他系所 請右轉＞</i></a>-->
                     <!--emsp;
-                    <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
-                    <a href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">選課資訊</a>&ensp;
-                    <a href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">校園地圖</a>&ensp;
-                    <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>-->
+                <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
+                <a href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">選課資訊</a>&ensp;
+                <a href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">校園地圖</a>&ensp;
+                <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>-->
                 </div>
             </div>
         </form>
 
         <div class="card mt-4">
             <div class="card-header">
-                🧬課程列表<!--<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>--><!--已修正-->
+                🧬 課程列表<!--<text><font weight="lighter" color="gray"><small>&emsp;* 注意：暫不支援教學大綱檔案 ಥ_ಥ</small></font></text>--><!--已修正-->
             </div>
             <div class="card-body" id="result">
                 <!-- Results will be displayed here -->
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-4">
+                &copy; 2021-<span id="currentYear"></span>&emsp;彰師通 NcueLink&emsp;資料來源：<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010">DEAN</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -344,81 +358,89 @@
         }
     </script>
 
-    <script> // 顯示近8年份、自動選擇年份與學期
-    const ddlYmsYear = document.getElementById('ddl_yms_year');
-    const ddlYmsSmester = document.getElementById('ddl_yms_smester');
-
-    const currentYear = new Date().getFullYear(); // 取得當前西元年份
-    const currentMonth = new Date().getMonth() + 1; // 取得當前月份
-
-    // 動態生成選項
-    for (let i = 0; i < 8; i++) {
-        const optionValue = (currentYear - 1911 - i).toString(); // 計算中華民國年
-        const optionText = optionValue;
-        const option = new Option(optionText, optionValue);
-
-        if (i === 0) {
-            option.setAttribute('selected', true); // 讓今年的選項預設為 selected
-        }
-
-        ddlYmsYear.appendChild(option);
-    }
-
-    // 根據月份設定中華民國年和學期（1~5月查詢下學期、6~12查詢上學期）
-    if (currentMonth >= 1 && currentMonth <= 5) {
-        ddlYmsYear.value = (currentYear - 1911 - 1).toString(); // 今年減一為民國年
-        ddlYmsSmester.value = '2';
-    } else {
-        ddlYmsYear.value = (currentYear - 1911).toString(); // 今年為民國年
-        ddlYmsSmester.value = '1';
-    }
+    <script>
+        // 獲取當前年份
+        const currentYearNew = new Date().getFullYear();
+        // 將當前年份設置為 footer 中的文本內容
+        document.getElementById('currentYear').textContent = currentYearNew;
     </script>
 
     <script>
-/*修正教學大綱無法開啟問題*/
-    function modifyLinks() {
-        var linksToModify = document.querySelectorAll("a[href*='/DEANV2/UploadDEAN/SUBJECT/'][target='_blank']");
-        linksToModify.forEach(function(linkElement) {
-            var originalHref = linkElement.getAttribute("href");
-            var newHref = "https://webap0.ncue.edu.tw" + originalHref;
-            linkElement.setAttribute("href", newHref);
+    // 顯示近8年份、自動選擇年份與學期
+        const ddlYmsYear = document.getElementById('ddl_yms_year');
+        const ddlYmsSmester = document.getElementById('ddl_yms_smester');
+
+        const currentYear = new Date().getFullYear(); // 取得當前西元年份
+        const currentMonth = new Date().getMonth() + 1; // 取得當前月份
+
+        // 動態生成選項
+        for (let i = 0; i < 8; i++) {
+            const optionValue = (currentYear - 1911 - i).toString(); // 計算中華民國年
+            const optionText = optionValue;
+            const option = new Option(optionText, optionValue);
+
+            if (i === 0) {
+                option.setAttribute('selected', true); // 讓今年的選項預設為 selected
+            }
+
+            ddlYmsYear.appendChild(option);
+        }
+
+        // 根據月份設定中華民國年和學期（1~5月查詢下學期、6~12查詢上學期）
+        if (currentMonth >= 1 && currentMonth <= 5) {
+            ddlYmsYear.value = (currentYear - 1911 - 1).toString(); // 今年減一為民國年
+            ddlYmsSmester.value = '2';
+        } else {
+            ddlYmsYear.value = (currentYear - 1911).toString(); // 今年為民國年
+            ddlYmsSmester.value = '1';
+        }
+    </script>
+
+    <script>
+        /*修正教學大綱無法開啟問題*/
+        function modifyLinks() {
+            var linksToModify = document.querySelectorAll("a[href*='/DEANV2/UploadDEAN/SUBJECT/'][target='_blank']");
+            linksToModify.forEach(function (linkElement) {
+                var originalHref = linkElement.getAttribute("href");
+                var newHref = "https://webap0.ncue.edu.tw" + originalHref;
+                linkElement.setAttribute("href", newHref);
+            });
+        }
+
+        function fetchFormDataAndModifyLinks() {
+            const form = document.getElementById('courseForm');
+            const formData = new FormData(form);
+
+            // 顯示等待訊息
+            document.getElementById('wait').style.display = 'flex';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    // 將 AJAX 回應（data）插入到結果區域中
+                    document.getElementById('result').innerHTML = data;
+                    modifyLinks(); // 修改連結
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    // 隱藏等待訊息
+                    document.getElementById('wait').style.display = 'none';
+                });
+        }
+
+        // 在查詢按鈕被按下時執行 fetch 資料和修改連結的程式碼
+        document.getElementById('btnSubmit').addEventListener('click', function (event) {
+            event.preventDefault(); // 防止表單直接送出
+            fetchFormDataAndModifyLinks(); // 呼叫 fetch 資料和修改連結的函式
         });
-    }
 
-    function fetchFormDataAndModifyLinks() {
-        const form = document.getElementById('courseForm');
-        const formData = new FormData(form);
-
-        // 顯示等待訊息
-        document.getElementById('wait').style.display = 'flex';
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            // 將 AJAX 回應（data）插入到結果區域中
-            document.getElementById('result').innerHTML = data;
-            modifyLinks(); // 修改連結
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            // 隱藏等待訊息
-            document.getElementById('wait').style.display = 'none';
-        });
-    }
-
-    // 在查詢按鈕被按下時執行 fetch 資料和修改連結的程式碼
-    document.getElementById('btnSubmit').addEventListener('click', function(event) {
-        event.preventDefault(); // 防止表單直接送出
-        fetchFormDataAndModifyLinks(); // 呼叫 fetch 資料和修改連結的函式
-    });
-
-    // 監聽 select 元素的 onchange 事件，並執行 fetch 資料和修改連結的程式碼
-    document.getElementById('ddl_scj_cls_id').addEventListener('change', fetchFormDataAndModifyLinks);
+        // 監聽 select 元素的 onchange 事件，並執行 fetch 資料和修改連結的程式碼
+        document.getElementById('ddl_scj_cls_id').addEventListener('change', fetchFormDataAndModifyLinks);
     </script>
 
 
@@ -476,6 +498,5 @@
         });
     });
     </script>-->
-
 </body>
 </html>
