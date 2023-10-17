@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- From ncue DEAN -->
     <link href="https://webap0.ncue.edu.tw/DEANV2/Content/css?v=XfppdWtmmD7AeIaCE6p-x2n4FAZcWgrlNorqU0v0zeA1" rel="stylesheet" />
-    <!--<link href="https://webap0.ncue.edu.tw/DEANV2/Content/MyCSS?v=nFOnxJfhFfZRyaoUgt5wEKsysbqEgmeh8K1agfBAXEk1" rel="stylesheet" />-->
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jquery?v=8z6YzzH0c3lAT2R_qe2hLO3ZyowcuHmPA5RUiWrC6gU1"></script>
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jqueryui?v=nmuMA-O4C0zphhL2ApoyudBi4v4VCXr0cCFlFmBK2eU1"></script>
@@ -17,21 +16,29 @@
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/jqueryAJAX?v=Xuam6TWPhcGt1QT7p5fexG3T-XZA9hjh88zJ89jkDQQ1"></script>
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/bootstrap?v=5vOThjBkQoqkLx8SW1NhtXx26ihmsuvhztPSLreW7mU1"></script>
     <script src="https://webap0.ncue.edu.tw/DEANV2/bundles/MyJS?v=gCmj3yvji5vv5mrFHaWgd_aXi87obCt2nDGmJTD8vGk1"></script>
-    <!--<link href="https://webap0.ncue.edu.tw/DEANV2/Content/DeanStyle.css" rel="stylesheet" />-->
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 
     <style>
+        html {
+            min-height: 100%;
+            min-height: 100%;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: transparent;
+            background-image: linear-gradient(#efefef, white, white, white, #f2f2f2, #e3e3e3);
+            background-color: #f2f2f2;
         }
 
         .navbar {
             background-color: #125299;
+            font-family: Arial, sans-serif;
         }
 
         .navbar-brand {
@@ -213,7 +220,6 @@
 
         /*Back to Top Button*/
         /*https://ezbox.idv.tw/131/back-to-top-button-without-images/ */
-        /* 56px */
         .toTop-arrow {
             width: 3.5rem;
             height: 3.5rem;
@@ -384,41 +390,12 @@
                                     <input id="emp_name" name="emp_name" class="form-control" type="text" placeholder="(￣y▽,￣)╭ " value="" />
                                 </td>
                             </tr>
-
-                            <!--<label for="ddl_cls_branch">日夜間別：</label>
-                            <select id="ddl_cls_branch" name="sel_cls_branch" class="form-control">
-                                <option value="D">日間部(教務處)</option>
-                                <option value="N">碩士在職專班(進修學院)</option>
-                            </select>
-                            <input id="sel_cls_branch" name="sel_cls_branch" type="hidden" value="D" />-->
-                            <!--
-                            <label for="ddl_cls_type">全英語授課：</label>
-                            <select id="ddl_cls_type" name="sel_scr_english" class="form-control">
-                                <option value=""></option>
-                                <option value="Y">是</option>
-                                <option value="N">否</option>
-                            </select>
-                            <input id="sel_scr_english" name="sel_scr_english" type="hidden" value="" />
-
-                            <label for="ddl_SCR_IS_DIS_LEARN">遠距：</label>
-                            <select id="ddl_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" class="form-control">
-                                <option value=""></option>
-                                <option value="Y">是</option>
-                                <option value="N">否</option>
-                            </select>
-                            <input id="sel_SCR_IS_DIS_LEARN" name="sel_SCR_IS_DIS_LEARN" type="hidden" value="" />-->
-
                         </table>
                     </div>
                     <!-- Add your other form elements here -->
                     <button type="submit" class="btn btn-primary" id="btnSubmit">&ensp;查詢&ensp;</button>
-                    <a href="javascript:location.reload()" class="btn btn-outline-primary">&ensp;清除&ensp;</a>&emsp;
+                    <a href="javascript:history.go(0)" class="btn btn-outline-primary">&ensp;清除&ensp;</a>&emsp;
                     <!--<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_self" style="font-size:small;"><i>其他系所 請右轉＞</i></a>-->
-                    <!--emsp;
-                    <a href="https://taiwangov.com/KhJFy" target="_blank">教務系統</a>&ensp;
-                    <a href="https://acadaff.ncue.edu.tw/ezfiles/21/1021/img/958/course.html" target="_blank">選課資訊</a>&ensp;
-                    <a href="https://app.ncuelink.ncuesa.org/ncue_map" target="_blank">校園地圖</a>&ensp;
-                    <a href="http://acadaff.ncue.edu.tw/ezfiles/21/1021/img/884/209669068.html" target="_blank">節次時間</a>-->
                 </div>
             </div>
         </form>
@@ -434,13 +411,9 @@
 
         <!-- Footer -->
         <footer class="page-footer font-small">
-
-            <!-- Copyright -->
             <div class="footer-copyright text-center py-4">
                 &copy; 2021-<span id="currentYear"></span>&emsp;彰師通 NcueLink&emsp;資料來源：<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010">DEAN</a>
             </div>
-            <!-- Copyright -->
-
         </footer>
         <!-- Footer -->
     </div>
@@ -566,60 +539,5 @@
         document.getElementById('ddl_scj_cls_id').addEventListener('change', fetchFormDataAndModifyLinks);
     </script>
 
-
-
-
-
-    <!--<script>
-    // 監聽 select 元素的 onchange 事件
-    document.getElementById('ddl_scj_cls_id').addEventListener('change', function() {
-        const form = document.getElementById('courseForm');
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            // 將 AJAX 回應（data）插入到結果區域中
-            document.getElementById('result').innerHTML = data;
-            // 在這裡修改特定連結的網址
-            var linksToModify = document.querySelectorAll("a[href*='/DEANV2/UploadDEAN/SUBJECT/'][target='_blank']");
-            linksToModify.forEach(function (linkElement) {
-                var originalHref = linkElement.getAttribute("href");
-                var newHref = "https://webap0.ncue.edu.tw" + originalHref;
-                linkElement.setAttribute("href", newHref);
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    });
-    </script>-->
-    <!--<script>
-    $(function () {
-        $("#courseForm").submit(function (event) {
-            event.preventDefault();
-            $.ajax({
-                url: 'https://webap0.ncue.edu.tw/DEANV2/Other/ob010/GetJson_ddl_scj_cls_id',
-                type: 'GET',
-                dataType: 'json',
-                data: $(this).serialize(),
-                success: function (data) {
-                    var options = '';
-                    for (var i = 0; i < data.length; i++) {
-                        options += '<option value="' + data[i].Value + '">' + data[i].Text + '</option>';
-                    }
-                    $("#ddl_scj_cls_id").html(options);
-                },
-                error: function () {
-                    console.error('Error:', error);
-                    // Handle AJAX error here
-                }
-            });
-        });
-    });
-    </script>-->
 </body>
 </html>
