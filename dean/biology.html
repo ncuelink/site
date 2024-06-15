@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="utf-8">
@@ -280,16 +280,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navbar-right mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link navword" href="https://rainbowdigital.com.tw/ncue_biology/front/Course%20Information/under/archive.php?ID=bmN1ZV9iaW9sb2d5JnVuZGVy" target="_blank">&ensp;生物系課綱</a><!--http://120.107.166.3/curriculum/super_pages.php?ID=curriculum1-->
+                        <a class="nav-link navword" href="https://biology.ncue.edu.tw/front/Course%20Information/under/archive.php?ID=bmN1ZV9iaW9sb2d5JnVuZGVy" target="_blank">&ensp;生物系課架</a><!--http://120.107.166.3/curriculum/super_pages.php?ID=curriculum1--> <!--https://rainbowdigital.com.tw/ncue_biology/front/Course%20Information/under/archive.php?ID=bmN1ZV9iaW9sb2d5JnVuZGVy-->
                     <li class="nav-item">
                         <a class="nav-link navword" href="https://acadaff.ncue.edu.tw/var/file/2/1002/img/958/course.html#timetable" target="_blank">&ensp;選課資訊</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navword" href="https://ncuehulolo.idv.tw/search" target="_blank">&ensp;課程評價</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link navword" href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_blank">&ensp;開課查詢</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link navword" href="javascript:window.open('https://ncuelink.github.io/app/ncue_map','校園地圖',config='width=450')">&ensp;校園地圖</a>
                     </li>
@@ -310,7 +310,7 @@
 
     <div class="newcontainer mt-5 pt-5">
         <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post"> id=form0-->
-        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="post"> <!--courseForm-->
+        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="post">
             <div class="card mt-4">
                 <div class="card-header">
                     🧫 查詢條件
@@ -355,10 +355,32 @@
 
                             <tr>
                                 <td>
+                                    <label for="ddl_cls_type">📆星期：</label>
+                                    <select id="ddl_sct_week" name="sel_sct_week" class="form-control">
+                                        <option value="">全部</option>
+                                        <option value="1">星期一</option>
+                                        <option value="2">星期二</option>
+                                        <option value="3">星期三</option>
+                                        <option value="4">星期四</option>
+                                        <option value="5">星期五</option>
+                                        <option value="6">星期六</option>
+                                    </select>                                    
+                                </td>
+                                <td>&emsp;&emsp;</td>
+                                <td>
+                                    <label for="ddl_cls_type">🔎老師姓名：</label>
+                                    <input id="emp_name" name="emp_name" class="form-control" type="text" placeholder="(￣y▽,￣)╭ " value="" />
+                                </td>
+                            </tr>
+
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+                            <tr>
+                                <td>
                                     <label for="ddl_cls_type">📚修課班別：</label>
                                     <select id="ddl_scj_cls_id" name="sel_cls_id" class="form-control">
                                         <!--onchange="$(this.form).submit();"-->
-                                        <option value=""></option>
+                                        <option value="">👉請選擇</option>
                                         <option value="D240BN1A">生一</option>
                                         <option value="D240BN2A">生二</option>
                                         <option value="D240BN3A">生三</option>
@@ -382,20 +404,21 @@
                                         <option value="D240MN2A">生碩二</option>
                                         <option value="D240MN1B">生技碩一</option>
                                         <option value="D240MN2B">生技碩二</option>
-                                    </select>
+                                    </select>                                                                        
                                 </td>
                                 <td>&emsp;&emsp;</td>
                                 <td>
-                                    <label for="ddl_cls_type">🔎老師姓名：</label>
-                                    <input id="emp_name" name="emp_name" class="form-control" type="text" placeholder="(￣y▽,￣)╭ " value="" />
+                                    <br>                              
+                                    <!-- Add your other form elements here -->
+                                    <button type="submit" class="btn btn-primary" id="btnSubmit">&ensp;查詢&ensp;</button>
+                                    <a href="javascript:history.go(0)" class="btn btn-outline-primary">&ensp;清除&ensp;</a>&emsp;
+                                    <!--<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_self" style="font-size:small;"><i>其他系所 請右轉＞</i></a>-->
                                 </td>
                             </tr>
                         </table>
+                        <!-- 這裡 -->
                     </div>
-                    <!-- Add your other form elements here -->
-                    <button type="submit" class="btn btn-primary" id="btnSubmit">&ensp;查詢&ensp;</button>
-                    <a href="javascript:history.go(0)" class="btn btn-outline-primary">&ensp;清除&ensp;</a>&emsp;
-                    <!--<a href="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" target="_self" style="font-size:small;"><i>其他系所 請右轉＞</i></a>-->
+                    
                 </div>
             </div>
         </form>
@@ -506,7 +529,7 @@
         }
 
         function fetchFormDataAndModifyLinks() {
-            const form = document.getElementById('form0'); <!--courseForm-->
+            const form = document.getElementById('form0');
             const formData = new FormData(form);
 
             // 顯示等待訊息
@@ -539,6 +562,7 @@
 
         // 監聽 select 元素的 onchange 事件，並執行 fetch 資料和修改連結的程式碼
         document.getElementById('ddl_scj_cls_id').addEventListener('change', fetchFormDataAndModifyLinks);
+        document.getElementById('ddl_sct_week').addEventListener('change', fetchFormDataAndModifyLinks);
     </script>
 
 </body>
