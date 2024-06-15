@@ -310,7 +310,7 @@
 
     <div class="newcontainer mt-5 pt-5">
         <!--<form id="courseForm" action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" method="post"> id=form0-->
-        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="courseForm" method="post">
+        <form action="https://webap0.ncue.edu.tw/DEANV2/Other/OB010" data-ajax="true" data-ajax-loading="#wait" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="post"> <!--courseForm-->
             <div class="card mt-4">
                 <div class="card-header">
                     🧫 查詢條件
@@ -506,7 +506,7 @@
         }
 
         function fetchFormDataAndModifyLinks() {
-            const form = document.getElementById('courseForm');
+            const form = document.getElementById('form0'); <!--courseForm-->
             const formData = new FormData(form);
 
             // 顯示等待訊息
